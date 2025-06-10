@@ -253,27 +253,58 @@ footer a {
     background-position: -60px 0;
 }
 .vimeo {
-    background-position: 0 0;
+    background-position: 0 -16px;
 }
 .youtube {
-    background-position: -16px 0;
+    background-position: -16px -16px;
 }
 .flickr {
-    background-position: -32px 0;
+    background-position: -32px -16px;
 }
 .instagram {
-    background-position: -48px 0;
+    background-position: -48px -16px;
 }
 .rss {
-    background-position: -64px 0;
+    background-position: -64px -16px;
 }
 #footer-logo {
     float: right;
-    margin-top: 20px;
-    font-size: 10px;
-    text-align: right;
 }
 form[name="search"] {
-                 float: right;
-            }
+    float: right;
+}
+.profile-card {
+    width: 220px; /* фиксированная ширина */
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+    margin: 20px;
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.profile-card .name {
+    font-size: 22px;
+    font-weight: 400;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+}
+
+.profile-card .position {
+    font-size: 18px;
+    color: #00aaff;
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0 auto;
+}
 
