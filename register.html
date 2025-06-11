@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html"; charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <title>Регистрация</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="styles.css" type="text/css">
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400, 300"
+        type="text/css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <a href="/"><img src="images/logo.png" alt="Webprog logo"></a>
+                <div class="header-right-controls">
+                    <div class="auth-buttons">
+                        <a href="login_success.html" class="auth-button login">Вход</a>
+                        <a href="register.html" class="auth-button register">Регистрация</a>
+                    </div>
+                    <form name="search" action="#" method="get">
+                        <input type="text" name="q" placeholder="Search"><button type="submit">GO</button>
+                    </form>
+                </div>
+            </header>
+            <div id="heading">
+                <h1>Регистрация пользователя</h1>
+            </div>
+            <section style="padding: 50px 0; max-width: 500px; margin: auto;">
+                <form action="index.html" method="get" class="registration-form">
+                    <div class="form-group">
+                        <label for="username">Имя пользователя:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_password">Подтвердите пароль:</label>
+                        <input type="password" id="confirm_password" name="confirm_password" required>
+                    </div>
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px;"><a href="index.html">Вернуться на главную страницу</a></p>
+            </section>
+            <footer>
+                <div id="footer">
+                    <div id="X">
+                        <h3>Лента новостей "Х"</h3>
+                        <time datetime="2012-10-23"><a href="#">23 oct</a></time>
+                        <p>Поздравляем астронавтов, которые сегодня покинули Землю. Хороший выбор </p>
+                        <p>Энди Милонакс, @андимилонакис</p></p>
+                    </div>
+                    <div id="sitemap"></div>
+                    <div id="social"></div>
+                    <div id="footer-logo"></div>
+                </div>
+            </footer>
+        </div>        
+        <script>
+            document.querySelector('.registration-form').addEventListener('submit', function(event) {
+                const password = document.getElementById('password').value;
+                const confirmPassword = document.getElementById('confirm_password').value;
+
+                if (password !== confirmPassword) {
+                    event.preventDefault(); // Предотвращаем стандартную отправку формы
+                    window.location.href = 'error404.html'; // Перенаправляем на страницу ошибки
+                }
+            });
+        </script>
+    </body>
+</html> 

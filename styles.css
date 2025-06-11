@@ -1,3 +1,25 @@
+h1 {
+    text-shadow: none; /* Глобальный сброс text-shadow для всех h1 */
+}
+
+/* Общие стили для #heading на всех страницах (кроме 404) */
+#heading {
+    background: url(images/h1-bg.png);
+    margin: 30px 0;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* Общие стили для h1 на всех страницах (кроме 404) */
+h1 {
+    display: inline-block;
+    color: #7e7e7e;
+    font: 40px/40px 'Oswald', sans-serif;
+    background: url(/images/bg.png);
+    margin: 0;
+    padding: 0 10px;
+}
+
 body {
     color: #8f8f8f;
     font: 12px Tahoma, sans-serif;
@@ -11,7 +33,7 @@ input[type="text"] {
     height: 30px;
     color: #b2b2b2;
     padding: 0 10px;
-    vertical-align: top;
+    vertical-align: middle;
 }
 button {
     color: #fff;
@@ -19,6 +41,7 @@ button {
     border: none;
     height: 32px;
     font-family: 'Oswald', sans-serif;
+    vertical-align: middle;
 }
 p {
     margin: 20px 0;
@@ -26,9 +49,14 @@ p {
 #wrapper {
     max-width: 960px;
     margin: auto;
+    position: relative;
+    z-index: 1;
 }
 header {
     padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 nav a {
     text-decoration: none;
@@ -54,12 +82,7 @@ nav li {
 .top-menu a {
     color: #b2b2b2;
 }
-#heading {
-    background: url(images/h1-bg.png);
-    margin: 30px 0;
-    padding-left: 20px;
-}
-h1 {
+#wrapper h1 {
     display: inline-block;
     color: #7e7e7e;
     font: 40px/40px 'Oswald', sans-serif;
@@ -271,7 +294,7 @@ footer a {
     float: right;
 }
 form[name="search"] {
-    float: right;
+    display: flex;
 }
 .profile-card {
     width: 220px; /* фиксированная ширина */
@@ -306,5 +329,213 @@ form[name="search"] {
     overflow: hidden;
     text-overflow: ellipsis;
     margin: 0 auto;
+}
+
+.auth-buttons {
+    margin-right: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.header-right-controls {
+    display: flex;
+    align-items: center;
+}
+
+.auth-button {
+    display: inline-block;
+    padding: 8px 15px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+.auth-button.login {
+    color: #29c5e6;
+    border: 1px solid #29c5e6;
+}
+
+.auth-button.register {
+    color: #fff;
+    background-color: #29c5e6;
+    border: 1px solid #29c5e6;
+}
+
+.auth-button:hover {
+    opacity: 0.8;
+}
+
+.registration-form {
+    background-color: #f3f3f3;
+    border: 1px solid #e7e7e7;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.registration-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #7e7e7e;
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+}
+
+.registration-form input[type="text"],
+.registration-form input[type="email"],
+.registration-form input[type="password"] {
+    width: calc(100% - 22px); /* 100% width minus padding and border */
+    background-color: #fff;
+    border: 1px solid #e7e7e7;
+    height: 30px;
+    color: #8f8f8f;
+    padding: 0 10px;
+    vertical-align: middle;
+}
+
+.registration-form button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#glitch-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.error-page-content {
+    text-align: center;
+    padding: 70px 0;
+    max-width: 650px;
+    margin: 100px auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(97, 220, 163, 0.7);
+    border: 1px solid rgba(97, 220, 163, 0.5);
+}
+
+.error-message {
+    font-size: 72px;
+    color: #61dca3;
+    margin-bottom: 30px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-shadow: 0 0 15px #61dca3, 0 0 30px #61dca3, 0 0 45px #61b3dc;
+}
+
+.error-page-content p {
+    font-size: 18px;
+    color: #e0e0e0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.back-to-home-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #61dca3;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(97, 220, 163, 0.5);
+    border: 1px solid #61dca3;
+}
+
+.back-to-home-button:hover {
+    background-color: #61dca3;
+    color: #000;
+    box-shadow: 0 0 15px rgba(97, 220, 163, 0.8);
+    border-color: #61dca3;
+}
+
+/* Стили для h1, применяемые ко всему сайту */
+#heading h1 {
+    display: inline-block;
+    color: #7e7e7e;
+    font: 40px/40px 'Oswald', sans-serif;
+    background: url(/images/bg.png);
+    margin: 0;
+    padding: 0 10px;
+}
+
+/* Специфичные стили для #heading на странице Error 404 */
+body#error-page-body #heading {
+    background: none;
+    padding-left: 0;
+    text-align: center;
+}
+
+/* Специфичные стили для h1 на странице Error 404 */
+body#error-page-body h1 {
+    color: #fff;
+    font: 72px/72px 'Oswald', sans-serif;
+    background: none;
+    padding: 0;
+    text-shadow: 0 0 20px #61dca3, 0 0 40px #61dca3, 0 0 60px #61b3dc, 0 0 80px #61b3dc;
+}
+
+/* Специфичные стили для содержимого страницы Error 404 */
+body#error-page-body .error-page-content {
+    text-align: center;
+    padding: 70px 0;
+    max-width: 650px;
+    margin: 100px auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(97, 220, 163, 0.7);
+    border: 1px solid rgba(97, 220, 163, 0.5);
+}
+
+body#error-page-body .error-message {
+    font-size: 72px;
+    color: #61dca3;
+    margin-bottom: 30px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    text-shadow: 0 0 15px #61dca3, 0 0 30px #61dca3, 0 0 45px #61b3dc;
+}
+
+body#error-page-body .error-page-content p {
+    font-size: 18px;
+    color: #e0e0e0;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+body#error-page-body .back-to-home-button {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: transparent;
+    color: #61dca3;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 0 10px rgba(97, 220, 163, 0.5);
+    border: 1px solid #61dca3;
+}
+
+body#error-page-body .back-to-home-button:hover {
+    background-color: #61dca3;
+    color: #000;
+    box-shadow: 0 0 15px rgba(97, 220, 163, 0.8);
+    border-color: #61dca3;
 }
 
